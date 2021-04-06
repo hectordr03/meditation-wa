@@ -4,9 +4,10 @@ import './Home.scss';
 const Home = () => {
 	return (
 		<div>
-			<h2 className='compTitle'>I am the Home component</h2>
+			<p className='compTitle'>I am the Home component, plus some styyyle</p>
 			<div className='splash'>
-            </div>
+				
+			</div>
 		</div>
 	);
 };
