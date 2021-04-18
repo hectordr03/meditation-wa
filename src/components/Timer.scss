@@ -1,17 +1,20 @@
 .wrapper {
     display: flex;
-    // align-items: center;
+    flex-flow: column;
+    align-items: center;
     justify-content: center;
 
-    height: 7vh;
-    width: 15vw;
-    // background-color: orange;
+    height: 30vh;
+    width: 45vw;
+    background-color: lightgray;
 }
 
 .timer {
+    height: 8vh;
     background-color: orange;
 }
 
 .title {
+    height: 4vh;
     background-color: green;
 }
