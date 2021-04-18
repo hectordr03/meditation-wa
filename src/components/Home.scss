@@ -1,4 +1,4 @@
-.compTitle {
+.Home {
     color: orange;
 }
 
@@ -6,5 +6,7 @@
     height: 70vh;
     width: 100%;
     background-color: blue;
-    // Add cloud svg images to create a peaceful above ground scene with sun, some clouds and green grass
+    background-image: url(../images/drawing.svg);
+    background-position: center;
+    background-repeat: no-repeat;
 }
