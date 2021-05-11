@@ -1,6 +1,6 @@
 import React from 'react';
 import '../components/Timer.scss';
-import CountdownTimer from '@sakit-sa/countdown-timer';
+// import CountdownTimer from '@sakit-sa/countdown-timer';
 
 // Timer component sourced from https://www.skypack.dev/view/@sakit-sa/countdown-timer
 
@@ -21,15 +21,26 @@ class Timer extends React.Component {
 			timerLength: 5,
 		};
 
-		this.clicked = this.clicked.bind(this);
+		//		this.clicked = this.clicked.bind(this);
+		this.changed = this.changed.bind(this);
 	}
 
-	clicked = () => {
-		let current = this.state.showTimer;
-		this.setState({
-			showTimer: !current,
-		});
+	timer = () => {
+		let now = new Date().getTime();
+		let limit = new Date(this.state.timerLength).getTime();
+		let gap = limit - now;
+
+		let second = 1000;
+		let minute = second * 60;
+		let hour = minute * 60;
 	};
+
+	// clicked = (e) => {
+	// 	let current = this.state.showTimer;
+	// 	this.setState({
+	// 		showTimer: !current,
+	// 	});
+	// };
 
 	changed = (e) => {
 		this.setState({
@@ -37,46 +48,23 @@ class Timer extends React.Component {
 		});
 	};
 
+	startTimer = () => {
+		let limit = this.state.timerLength;
+	};
+
 	render() {
 		return (
 			<div className='wrapper'>
 				<p className='title'>Timer component</p>
-				{/* <CountdownTimer 
-                className='timer'
-                format='MM:SS'
-                onComplete={() => alert("Good job! You finished your meditation. (Meditative quote here, I like what headspace says about the always present blue sky)")}/> */}
+
 				<div>
 					<input
-						type='text'
+						type='number'
 						value={this.state.timerLength}
 						onChange={this.changed}
 					/>
-					<button onClick={this.clicked}>minute(s)</button>
-					{this.state.showTimer ? (
-						<CountdownTimer
-							format='MM:SS'
-							time={this.state.timerLength * 60} 
-							// input defaults to seconds
-						/>
-					) : null}
+					{/* <button onClick={this.clicked}> Click me </button> */}
 				</div>
-
-				{/* <div>
-					<button onClick={this.clicked}>1m 30s</button>
-					{this.state.showTimer ? (
-						<CountdownTimer format='MM:SS' time={90} />
-					) : null}
-
-					<button onClick={this.clicked}>3m</button>
-					{this.state.showTimer ? (
-						<CountdownTimer format='MM:SS' time={180} />
-					) : null}
-
-					<button onClick={this.clicked}>5m</button>
-					{this.state.showTimer ? (
-						<CountdownTimer format='MM:SS' time={300} />
-					) : null}
-				</div> */}
 			</div>
 		);
 	}
