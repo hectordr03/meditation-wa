@@ -48,8 +48,14 @@ class Timer extends React.Component {
 		});
 	};
 
-	startTimer = () => {
+	timer = () => {
+		// value will come in as ms
 		let limit = this.state.timerLength;
+
+		// Use moment js to parse through timestamp and then add "limit" to time value
+		setInterval(() => {
+			
+		}, 1000);
 	};
 
 	render() {
