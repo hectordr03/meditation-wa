@@ -51,10 +51,13 @@ class Timer extends React.Component {
 	timer = () => {
 		// value will come in as ms
 		let limit = this.state.timerLength;
+		let count = 0;
 
 		// Use moment js to parse through timestamp and then add "limit" to time value
 		setInterval(() => {
-			
+			for (count; count <= limit; count++){
+				count === limit ? console.log('timer complete') : console.log(`count is ${count}`)
+			}
 		}, 1000);
 	};
 
@@ -69,6 +72,7 @@ class Timer extends React.Component {
 						value={this.state.timerLength}
 						onChange={this.changed}
 					/>
+					<button onClick={this.timer}>Start</button>
 					{/* <button onClick={this.clicked}> Click me </button> */}
 				</div>
 			</div>
